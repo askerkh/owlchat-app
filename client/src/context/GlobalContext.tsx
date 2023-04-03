@@ -56,7 +56,7 @@ const GlobalProvider: React.FC<PropsWithChildren> = ({ children }) => {
   useEffect(() => {
     authFetch(setIsAuth, setToken, setUsername).then((token) => {
       if (!token) return
-      socket.current = io("http://localhost:3000")
+      socket.current = io("https://owlchat-api.onrender.com")
 
       socket.current.emit(Events.CONNECT)
 
