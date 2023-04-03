@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .iconButton {
+    @apply relative flex h-14 w-14 items-center justify-center rounded-[100%] bg-bgButton text-3xl text-iconColor transition-all duration-300  hover:rounded-md active:brightness-125;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    scrollbar-width: none;
+  }
+}
