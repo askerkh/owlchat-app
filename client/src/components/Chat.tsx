@@ -8,7 +8,7 @@ const Chat: React.FC = () => {
   const { messages } = useMessages()
 
   return (
-    <div className="scrollbar-hide flex w-full flex-col justify-end gap-4 overflow-y-scroll px-2">
+    <div className="scrollbar-hide flex w-full h-withOutHeader flex-col justify-end gap-4 overflow-y-scroll px-2">
       <ul className="scrollbar-hide flex h-max w-full flex-col gap-4 overflow-y-scroll">
         {messages
           ? messages.map((message, index) => {
