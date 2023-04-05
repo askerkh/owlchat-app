@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react"
 import useGlobal from "../hooks/useGlobal"
 import useMessages from "../hooks/useMessages"
 import AddMessageForm from "./UI/AddMessageForm"
@@ -6,6 +7,13 @@ import Message from "./UI/Message"
 const Chat: React.FC = () => {
   const { currentChatId } = useGlobal()
   const { messages } = useMessages()
+  const mockElement = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    if(mockElement.current) {
+      mockElement.current.scrollIntoView({behavior: "smooth"})
+    }
+  }, [messages])
 
   return (
     <div className="scrollbar-hide flex w-full h-withOutHeader flex-col justify-end gap-4 overflow-y-scroll px-2">
@@ -27,6 +35,7 @@ const Chat: React.FC = () => {
               }
             })
           : null}
+        <div ref={mockElement} />
       </ul>
       <AddMessageForm />
     </div>
